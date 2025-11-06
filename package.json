@@ -1,0 +1,38 @@
+{
+  "name": "rina-avcilik-hesaplayici",
+  "version": "1.0.0",
+  "description": "RINA RP Avcilik Hesap Makinesi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "publish": "electron-builder --publish always"
+  },
+  "author": "kutsi",
+  "license": "MIT",
+  "dependencies": {
+    "electron-updater": "^6.6.2",
+    "firebase": "^10.0.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.rinarp.avcilikhesaplayici",
+    "productName": "RINA Avcilik Hesaplayici",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "logo.ico"
+    },
+
+    "publish": {
+      "provider": "github",
+      "owner": "SİZİN_GİTHUB_KULLANICI_ADINIZ",
+      "repo": "SİZİN_GİTHUB_DEPO_ADINIZ"
+    }
+  }
+}

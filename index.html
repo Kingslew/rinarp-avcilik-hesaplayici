@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://*.firebaseio.com https://*.googleapis.com https://www.gstatic.com; object-src 'self'">
+    <title>RINA RP Avcılık Hesaplayıcı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container calculator-section">
+        <h2>Ürün Ekleme</h2>
+        
+        <label for="item-select">Ürün Seçin:</label>
+        <select id="item-select">
+            <option value="">Fiyatlar yükleniyor...</option>
+        </select>
+
+        <label for="item-quantity">Miktar:</label>
+        <input type="number" id="item-quantity" placeholder="örn: 150" min="1">
+        <button id="add-to-cart" class="btn btn-primary" style="width: 100px;">Sepete Ekle</button>
+
+        <div id="status-bar" class="status-loading" style="margin-top: 20px;">Bağlanıyor...</div>
+    </div>
+
+    <div class="cart-section">
+        <div class="container">
+            <h2>Sepetim</h2>
+            <ul id="cart-items">
+                <li>Sepetiniz boş.</li>
+            </ul>
+            <button id="clear-cart" class="btn btn-danger" style="width: 100%; margin-top: 10px;">Sepeti Temizle</button>
+            
+            <div id="total-container">
+                <h3>Sepet Toplamı:</h3>
+                <div id="total-price">0 $</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Yüzdelik Hesaplama</h2>
+            <input type="text" id="total-amount" placeholder="Toplam tutar buraya gelecek" readonly>
+            <select id="percentage-select">
+                <option value="0">Oran Seçin</option>
+                <option value="-10">-%10 (Vergi vb.)</option>
+                <option value="-15">-%15</option>
+                <option value="-30">-%30</option>
+                <option value="10">+%10 (Bonus vb.)</option>
+            </select>
+            <button id="calculate-percentage" class="btn btn-success" style="width: 100%;">Hesapla</button>
+            <div id="percentage-result">
+                <strong>Sonuç: 0 $</strong>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="renderer.js"></script>
+</body>
+</html>
